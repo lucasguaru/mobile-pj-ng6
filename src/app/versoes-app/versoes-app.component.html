@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Versão</th>
+        <th>Plataforma</th>
+        <th>Habilitada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let versao of versoes">
+        <td>{{ versao.cdVersaoApp }}</td>
+        <td>{{ versao.nomeSistemaOperacional }}</td>
+        <td>{{ versao.habilitada === 'S' ? 'Sim' : 'Não' }}</td>
+        <td><button type="button" class="btn btn-primary" [routerLink]="['/versoesAtivas',versao.cdVersaoApp, versao.cdSistemaOperacional]">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>

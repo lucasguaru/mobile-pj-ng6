@@ -1,0 +1,23 @@
+<form>
+    <div class="form-group">
+      <label for="inputCdVersaoApp">Versao</label>
+      <input type="text" class="form-control" [(value)]="versao.cdVersaoApp" id="inputCdVersaoApp" placeholder="1.0.1">
+    </div>
+    <div class="form-group">
+      <label for="inputSistemaOperacional">Plataforma</label>
+      <select class="form-control" id="inputSistemaOperacional" [(value)]="versao.cdSistemaOperacional">
+        <option value="1">Android</option>
+        <option value="2">iOS</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="inputSistemaOperacional">Habilitado</label>
+      <select class="form-control" id="inputSistemaOperacional" [(value)]="versao.habilitada">
+        <option  *ngFor="let option of habilitadoOptions" [value]="option.value">{{ option.text }}</option>
+      </select>
+    </div>
+    <div class="right">
+      <button type="submit" class="btn btn-primary" (click)="cancelarEditar()">Cancelar</button> &nbsp;
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+  </form>
