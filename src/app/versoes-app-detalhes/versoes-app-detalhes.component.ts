@@ -13,8 +13,8 @@ export class VersoesAppDetalhesComponent implements OnInit {
   versao: Versao = {versaoPk : {cdVersaoApp: '', cdSistemaOperacional:  0}};
   versaoPk: {};
   tipoEdicao: string = 'editar';
-  private habilitadoOptions = [{value:'S', text: 'Sim'}, {value:'N', text: 'Não'}];
-  private sistemaOperacionalOptions = [{value:'1', text: 'Android'}, {value:'2', text: 'iOS'}];
+  habilitadoOptions = [{value:'S', text: 'Sim'}, {value:'N', text: 'Não'}];
+  sistemaOperacionalOptions = [{value:'1', text: 'Android'}, {value:'2', text: 'iOS'}];
 
   constructor(private router: Router, private route: ActivatedRoute, private versoesAtivasService: VersoesAtivasService) {
     this.route.params.subscribe(params => {

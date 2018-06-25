@@ -14,15 +14,15 @@ export class VersoesAtivasService {
   constructor(private http: HttpClient) {  }
 
   public getVersoes() {
-    return this.http.get<Versao[]>(this.baseUrl + '/version');
+    return this.http.get<Versao[]>(this.baseUrl + 'version');
   }
   public getVersao(versao: Versao) {
-    return this.http.get<Versao>(this.baseUrl + '/version/' + versao.versaoPk.cdVersaoApp + "/" + versao.versaoPk.cdSistemaOperacional);
+    return this.http.get<Versao>(this.baseUrl + 'version/' + versao.versaoPk.cdVersaoApp + "/" + versao.versaoPk.cdSistemaOperacional);
   }
   public salvarVersao(versao: Versao) {
-    return this.http.post<Versao>(this.baseUrl + '/version', versao);
+    return this.http.post<Versao>(this.baseUrl + 'version', versao);
   }
   public atualizarVersao(versaoPk, versao: Versao) {
-    return this.http.post<Versao>(this.baseUrl + '/version/' + versaoPk.cdVersaoApp + "/" + versaoPk.cdSistemaOperacional, versao);
+    return this.http.post<Versao>(this.baseUrl + 'version/' + versaoPk.cdVersaoApp + "/" + versaoPk.cdSistemaOperacional, versao);
   }
 }
