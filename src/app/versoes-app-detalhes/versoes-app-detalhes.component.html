@@ -1,22 +1,35 @@
+<div class="alert alert-success alert-dismissible fade show" [hidden]="!alertSuccess.show" role="alert">
+  {{ alertSuccess.mensagem }}
+  <button type="button" class="close" aria-label="Close" (click)="alertSuccess.show = !alertSuccess.show">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" [hidden]="!alertError.show" role="alert">
+  {{ alertError.mensagem }}
+  <button type="button" class="close" aria-label="Close" (click)="alertError.show = !alertError.show">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <form>
-    <div class="form-group">
-      <label for="inputCdVersaoApp">Versao</label>
-      <input type="text" class="form-control" [(ngModel)]="versao.versaoPk.cdVersaoApp" name="cdVersaoApp" id="inputCdVersaoApp" placeholder="1.0.1">
-    </div>
-    <div class="form-group">
-      <label for="inputSistemaOperacional">Plataforma</label>
-      <select class="form-control" id="inputSistemaOperacional" [(ngModel)]="versao.versaoPk.cdSistemaOperacional"  name="cdSistemaOperacional">
-        <option  *ngFor="let sistema of sistemaOperacionalOptions" [value]="sistema.value">{{ sistema.text }}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="inputSistemaOperacional">Habilitado</label>
-      <select class="form-control" id="inputSistemaOperacional" [(ngModel)]="versao.habilitada" name="habilitada">
-        <option  *ngFor="let option of habilitadoOptions" [value]="option.value">{{ option.text }}</option>
-      </select>
-    </div>
-    <div class="right">
-      <button type="button" class="btn btn-primary" (click)="cancelarEditar()">Cancelar</button> &nbsp;
-      <button type="button" class="btn btn-primary" (click)="salvarVersao()">Salvar</button>
-    </div>
-  </form>
+  <div class="form-group">
+    <label for="inputCdVersaoApp">Versao</label>
+    <input type="text" class="form-control" [(ngModel)]="versao.versaoPk.cdVersaoApp" name="cdVersaoApp" id="inputCdVersaoApp"
+      placeholder="1.0.1">
+  </div>
+  <div class="form-group">
+    <label for="inputSistemaOperacional">Plataforma</label>
+    <select class="form-control" id="inputSistemaOperacional" [(ngModel)]="versao.versaoPk.cdSistemaOperacional" name="cdSistemaOperacional">
+      <option *ngFor="let sistema of sistemaOperacionalOptions" [value]="sistema.value">{{ sistema.text }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="inputSistemaOperacional">Habilitado</label>
+    <select class="form-control" id="inputSistemaOperacional" [(ngModel)]="versao.habilitada" name="habilitada">
+      <option *ngFor="let option of habilitadoOptions" [value]="option.value">{{ option.text }}</option>
+    </select>
+  </div>
+  <div class="right">
+    <button type="button" class="btn btn-primary" (click)="cancelarEditar()">Cancelar</button> &nbsp;
+    <button type="button" class="btn btn-primary" (click)="salvarVersao()">Salvar</button>
+  </div>
+</form>
