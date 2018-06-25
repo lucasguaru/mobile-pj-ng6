@@ -8,10 +8,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let versao of versoes">
-        <td>{{ versao.cdVersaoApp }}</td>
+        <td>{{ versao.versaoPk.cdVersaoApp }}</td>
         <td>{{ versao.nomeSistemaOperacional }}</td>
         <td>{{ versao.habilitada === 'S' ? 'Sim' : 'Não' }}</td>
-        <td><button type="button" class="btn btn-primary" [routerLink]="['/versoesAtivas',versao.cdVersaoApp, versao.cdSistemaOperacional]">Editar</button></td>
+        <td><button type="button" class="btn btn-primary" [routerLink]="['/versoesAtivas',versao.versaoPk.cdVersaoApp, versao.versaoPk.cdSistemaOperacional]">Editar</button></td>
       </tr>
     </tbody>
   </table>
+  <div class="row">
+    <button class="btn btn-primary" type="button" routerLink="/versoesAtivas/adicionar">Adicionar</button>
+  </div>
