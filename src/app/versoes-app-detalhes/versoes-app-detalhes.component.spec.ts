@@ -1,3 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VersoesAppDetalhesComponent } from './versoes-app-detalhes.component';
@@ -8,9 +11,10 @@ describe('VersoesAppDetalhesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VersoesAppDetalhesComponent ]
+      declarations: [VersoesAppDetalhesComponent ],
+      imports: [ RouterTestingModule, HttpClientModule, FormsModule ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
